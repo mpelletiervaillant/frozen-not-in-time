@@ -1,47 +1,146 @@
 html {
-  background-color: #000;
+  font-family: "Fredoka One", sans-serif;
 }
 
-.clock-face {
-  height: 300px;
-  margin: 50px auto;
+header {
+  padding: 5em 2em;
+  background-image: repeating-linear-gradient(-45deg, #b3fbff, #b3fbff 10px, #c9fcff 10px, #c9fcff 20px);
   position: relative;
-  width: 300px;
-
-  background: transparent url("../images/clock-face.svg") no-repeat center center;
+  overflow: hidden;
+  border-bottom: 3px solid #d4fdff;
+  border-top: 3px solid #d4fdff;
 }
 
-.clock-center {
-  bottom: calc(50% - 14px);
-  left: calc(50% - 14px);
+.intro {
+  transform: rotate(-5deg);
+  transform-origin: left center;
+}
+
+h1 {
+  color: #990073;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .5));
+}
+
+h2 {
+  color: #c09;
+  text-shadow: 1px 1px rgba(0, 0, 0, .5);
+  max-width: 19em;
+}
+
+.everything {
+  animation: text-intro .5s linear forwards;
+}
+
+.btn-ghost {
+  text-decoration: none;
+  color: #c09;
+  border: 2px solid #990073;
+}
+
+.btn-ghost:hover {
+  background-color:#d4fdff;
+  color: #c09;
+  border: 2px solid #990073;
+}
+
+img {
+  width: 175px;
   position: absolute;
-  width: 28px;
 }
 
-.hand {
-  bottom: calc(50% - 8px);
-  left: calc(50% - 7px);
-  position: absolute;
-  width: 14px;
+.cone {
+  bottom: 10px;
 
-  transform-origin: 50% calc(100% - 8px);
+  animation: ice-cream-drop .5s linear forwards;
 }
 
-.hand-minute {
-  animation: hand-rotate .5s linear infinite;
+.mint-chip {
+  bottom: 500px;
+
+  animation: ice-cream-drop-two .5s .5s linear forwards;
 }
 
-@keyframes hand-rotate {
+.chocolate-chip {
+  bottom: 500px;
+
+  animation: ice-cream-drop-three .5s 1s linear forwards;
+}
+
+.vanilla-fudge {
+  bottom: 500px;
+  animation: ice-cream-drop-four .5s 1.5s linear forwards;
+}
+
+.cherry {
+  bottom: 500px;
+  animation: ice-cream-drop-five .5s 2s linear forwards;
+
+}
+
+@keyframes ice-cream-drop {
 
   0% {
-    transform: rotate(0deg);
+    transform: translate(0, -500px);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: translateY(-5px);
   }
 }
 
-.hand-hour {
-  animation: hand-rotate 6s linear infinite;
+@keyframes ice-cream-drop-two {
+
+  0% {
+    transform: translate(0, -500px);
+  }
+
+  100% {
+    transform: translateY(380px);
+  }
+}
+
+@keyframes ice-cream-drop-three {
+
+  0% {
+    transform: translate(0, -500px);
+  }
+
+  100% {
+    transform: translateY(295px);
+  }
+}
+
+@keyframes ice-cream-drop-four {
+
+  0% {
+    transform: translate(0, -500px);
+  }
+
+  100% {
+    transform: translateY(220px);
+  }
+}
+
+@keyframes ice-cream-drop-five {
+
+  0% {
+    transform: translate(0, -500px);
+  }
+
+  100% {
+    transform: translateY(160px);
+  }
+}
+
+@keyframes text-intro {
+
+  0% {
+    opacity: 0;
+    filter: blur(7px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
